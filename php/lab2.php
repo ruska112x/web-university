@@ -6,14 +6,8 @@ function printResult($number, callable $expr) {
 }
 
 function printArray($array, $end = "") {
-  echo "[";
-  foreach ($array as $i => $x) {
-    echo $x;
-    if ($i != count($array) - 1) {
-      echo ", ";
-    }
-  }
-  echo "]" . $end;
+  print_r($array);
+  echo $end;
 }
 
 printResult(1, 
@@ -29,9 +23,7 @@ printResult(2,
   function () {
     $array = ['Привет, ', 'мир',  '!'];
     $array[0] = 'Пока, ';
-    foreach($array as $x) {
-      echo $x;
-    }
+    print_r($array);
   }
 );
 
@@ -52,12 +44,12 @@ printResult(4,
   function () {
     $arr1 = array();
     foreach(range(0, 10) as $i) {
-      array_push($arr1, mt_rand(1, 100));
+      array_push($arr1, mt_rand());
     }
     printArray($arr1, "\n");
     $arr2 = array();
     foreach ($arr1 as $x) {
-        if (str_contains(strval($x), '5')) {
+        if (str_contains(strval($x), '25')) {
             array_push($arr2, $x);
         }
     }
@@ -89,7 +81,7 @@ printResult(6,
   function () {
     $arr1 = array();
     foreach(range(0, 10) as $i) {
-      array_push($arr1, mt_rand(1, 100));
+      array_push($arr1, mt_rand());
     }
     printArray($arr1, "\n");
     rsort($arr1);
@@ -193,10 +185,10 @@ printResult(12,
     foreach(str_split($str) as $i => $x) {
       if (is_numeric($x)) {
         if ($isFirst) {
-          $first = $i;
+          $first = $i + 1;
           $isFirst = false;
         } else {
-          $last = $i;
+          $last = $i + 1;
         }
       }
     }
