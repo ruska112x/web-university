@@ -21,7 +21,7 @@ printResult(1, () => {
 printResult(2, () => {
     const array = ['Привет, ', 'мир', '!'];
     array[0] = 'Пока, ';
-    array.forEach(x => process.stdout.write(x));
+    printArray(array);
 });
 
 printResult(3, () => {
@@ -126,10 +126,10 @@ printResult(12, () => {
     [...str].forEach((x, i) => {
         if (!isNaN(x)) {
             if (isFirst) {
-                first = i;
+                first = i + 1;
                 isFirst = false;
             } else {
-                last = i;
+                last = i + 1;
             }
         }
     });
