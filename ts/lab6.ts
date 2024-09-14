@@ -1,17 +1,17 @@
-function randomInteger(min, max) {
+function randomInteger(min: number = -1_000_000, max: number = 1_000_000): number {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
 }
 
-const printResult = (number, expr) => {
-    console.log(` #${number}`);
-    expr();
-    console.log("\n");
-}
+const printResult = (num: number, exp: CallableFunction): void => {
+    console.log(` #${num}`);
+    exp();
+    console.log('');
+};
 
 printResult(1, () => {
     const array = ['Привет, ', 'мир', '!'];
-    array.forEach(x => process.stdout.write(x));
+    array.forEach(x => console.log(x));
 });
 
 printResult(2, () => {
@@ -22,7 +22,7 @@ printResult(2, () => {
 
 printResult(3, () => {
     const str = '023m0df0dfg0';
-    const array = [];
+    const array: Array<number> = [];
     [...str].forEach((c, i) => {
         if (c === '0') {
             array.push(i);
@@ -41,7 +41,7 @@ printResult(4, () => {
 
 printResult(5, () => {
     function mergeArrays(arr1, arr2) {
-        const result = [];
+        const result: Array<number> = [];
         if (arr1.length === arr2.length) {
             for (let i = 0; i < arr1.length; ++i) {
                 result.push(arr1[i], arr2[i]);
@@ -120,7 +120,7 @@ printResult(12, () => {
     let isFirst = true;
 
     [...str].forEach((x, i) => {
-        if (!isNaN(x)) {
+        if (!isNaN(Number(x))) {
             if (isFirst) {
                 first = i + 1;
                 isFirst = false;
@@ -134,3 +134,5 @@ printResult(12, () => {
     console.log(first);
     console.log(last);
 });
+
+export { };
