@@ -1,18 +1,9 @@
-const getRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
 const createCircle = (x, y) => {
     const circle = document.createElement('div');
     circle.classList.add('circle');
+    circle.classList.add('red');
     circle.style.left = `${x}px`;
     circle.style.top = `${y}px`;
-    circle.style.backgroundColor = getRandomColor();
     circle.dataset.clickCount = '0';
     document.body.appendChild(circle);
 }
@@ -21,19 +12,18 @@ const handleCircleClick = (circle) => {
     let clickCount = parseInt(circle.dataset.clickCount);
 
     circle.dataset.clickCount = ++clickCount;
-    
-    if (clickCount === 0) {
-        circle.classList.remove('border-only');
-        circle.classList.add('reset');
-    } else if (clickCount === 1) {
-        circle.classList.remove('reset');
+
+    if (clickCount === 1) {
+        circle.classList.remove('red');
         circle.classList.add('grow');
-        circle.style.backgroundColor = getRandomColor();
+        circle.classList.add('blue');
     } else if (clickCount === 2) {
-        circle.classList.add('border-only');
-        circle.style.borderColor = getRandomColor();
-        circle.style.backgroundColor = 'transparent';
+        circle.classList.remove('blue');
+        circle.classList.remove('grow');
+        circle.classList.add('red');
     } else if (clickCount === 3) {
+        circle.classList.add('border-only');
+    } else if (clickCount === 4) {
         circle.remove();
     }
 }

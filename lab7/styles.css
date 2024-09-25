@@ -17,11 +17,19 @@ body {
     transition: transform 0.5s ease, background-color 0.5s ease, border 0.5s ease;
 }
 
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
 .circle.grow {
     transform: scale(2);
 }
 
 .circle.border-only {
     background-color: transparent;
-    border: 3px solid;
+    border: 3px solid red;
 }
