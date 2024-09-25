@@ -1,0 +1,13 @@
+body {
+    background-color: springgreen;
+}
+
+.container {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+}
+
+.box {
+    size: 10%;
+}
