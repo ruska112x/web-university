@@ -11,7 +11,9 @@ const printResult = (num: number, exp: CallableFunction): void => {
 
 printResult(1, () => {
     const array = ['Привет, ', 'мир', '!'];
-    array.forEach(x => console.log(x));
+    let str = "";
+    array.forEach(x => str +=x);
+    console.log(str);
 });
 
 printResult(2, () => {
@@ -40,8 +42,8 @@ printResult(4, () => {
 });
 
 printResult(5, () => {
-    function mergeArrays(arr1, arr2) {
-        const result: Array<number> = [];
+    function mergeArrays(arr1: Array<number>, arr2: Array<string>) {
+        const result: Array<any> = [];
         if (arr1.length === arr2.length) {
             for (let i = 0; i < arr1.length; ++i) {
                 result.push(arr1[i], arr2[i]);
@@ -134,5 +136,3 @@ printResult(12, () => {
     console.log(first);
     console.log(last);
 });
-
-export { };
