@@ -14,10 +14,11 @@ printResult(1, () => {
     console.log(`Число: ${x}`);
     console.log(x > 0 ? 'Положительное' : 'Отрицательное');
     console.log(x % 2 === 0 ? 'Четное' : 'Нечетное');
+    console.log(x % 3 === 0 ? 'Делится без остатка на 3' : 'Не делится без остатка на 3');
 });
 
 printResult(2, () => {
-    let x = randomInteger(-42, 42);
+    let x = randomInteger(-40002, 40002);
     console.log(`Число: ${x}`);
     let first = x.toString();
     let last = x.toString();
@@ -42,7 +43,7 @@ printResult(3, () => {
     console.log(`Строка: ${str}`);
     console.log(`Длина строки: ${str.length}`);
     for (let i = 0; i < str.length; i++) {
-        console.log(str[i]);
+        console.log(str[str.length - i - 1]);
     }
 });
 
@@ -63,7 +64,7 @@ printResult(5, () => {
     let xFirst = Number(x.toString()[0]);
     let yFirst = Number(y.toString()[0]);
     console.log(`Первые числа ${xFirst === yFirst ? "" : "не "}совпадают`);
-    console.log(`Первые число без остатка ${x % y === 0 ? "" : "не "}делится без остатка`);
+    console.log(`Первые число без остатка ${x % y === 0 ? "" : "не "}делится на второе`);
     console.log(`Большее число: ${x > y ? x : y}`);
 });
 

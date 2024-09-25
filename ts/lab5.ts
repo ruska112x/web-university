@@ -17,7 +17,7 @@ printResult(1, () => {
 });
 
 printResult(2, () => {
-    let x = randomInteger(-42, 42);
+    let x = randomInteger(-4000002, 4000002);
     console.log(`Число: ${x}`);
     let first = x.toString();
     let last = x.toString();
@@ -34,9 +34,9 @@ printResult(2, () => {
         lenNum = len.length;
     }
     console.log(`Первая цифра: ${first}`);
-    console.log(`Последняя цифра: ${last}`);
-    console.log(`Сумма первой и последней: ${Number(first) + Number(last)}`);
-    console.log(`Количество цифр: ${len}`);
+    console.log(`Последняя цифра: ${lastNum}`);
+    console.log(`Сумма первой и последней: ${Number(first) + Number(lastNum)}`);
+    console.log(`Количество цифр: ${lenNum}`);
 });
 
 printResult(3, () => {
@@ -44,7 +44,7 @@ printResult(3, () => {
     console.log(`Строка: ${str}`);
     console.log(`Длина строки: ${str.length}`);
     for (let i = 0; i < str.length; i++) {
-        console.log(str[i]);
+        console.log(str[str.length - i - 1]);
     }
 });
 
@@ -83,13 +83,13 @@ printResult(7, () => {
     let x = randomInteger(1, 50);
     let y = randomInteger(1, 50);
     let z = randomInteger(1, 50);
+    let i = randomInteger(1, 50);
     console.log(`Число 1: ${x}`);
     console.log(`Число 2: ${y}`);
     console.log(`Число 3: ${z}`);
-    console.log(`Среднее арифметическое: ${(x + y + z) / 3}`);
-    console.log(`Сумма квадратов: ${(x * x) + (y * y) + (z * z)}`);
-    console.log(`Наибольшее из чисел: ${Math.max(x, y, z)}`);
-    console.log(`Наименьшее из чисел: ${Math.min(x, y, z)}`);
+    console.log(`Число 4: ${i}`);
+    console.log(`Среднее арифметическое: ${(x + y + z + i) / 4}`);
+    console.log(`Сумма квадратов: ${(x * x) + (y * y) + (z * z) + (i * i)}`);
+    console.log(`Наибольшее из чисел: ${Math.max(x, y, z, i)}`);
+    console.log(`Наименьшее из чисел: ${Math.min(x, y, z, i)}`);
 });
-
-export { };

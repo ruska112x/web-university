@@ -90,7 +90,7 @@ printResult(9, () => {
 
     const dividend = arr.slice(0, 4).reduce((a, b) => a + b, 0);
     const divisor = arr.slice(4).reduce((a, b) => a + b, 0);
-    const result = dividend / divisor;
+    const result = dividend * divisor;
 
     console.log(dividend);
     console.log(divisor);
