@@ -25,9 +25,18 @@ const handleImgClick = (img) => {
     }
 }
 
+const restartGame = () => {
+    randomizeImages();
+    let endText = document.getElementById("end");
+    let restartButton = document.getElementById("restartButton");
+
+    endText.classList.add("unvisible");
+    restartButton.classList.add("unvisible");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     randomizeImages();
-    document.addEventListener('click', function (event) {
+    document.addEventListener('click', (event) => {
         if (event.target.classList.contains('img')) {
             handleImgClick(event.target);
         }
@@ -41,9 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 solved = false;
             }
         });
-        let end = document.getElementById("end");
+        let endText = document.getElementById("end");
+        let restartButton = document.getElementById("restartButton");
         if (solved) {
-            end.classList.remove("unvisible");
+            endText.classList.remove("unvisible");
+            restartButton.classList.remove("unvisible");
         }
     });
 });
