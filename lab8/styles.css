@@ -1,13 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background-color: springgreen;
 }
 
 .container {
-    margin-top: 100px;
+    margin: 100px 0 0 100px;
     display: grid;
     grid-template-columns: repeat(3, 200px);
 }
 
-.box {
-    size: 10%;
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.end {
+    position: absolute;
+    top: 400px;
+    left: 400px;
+}
+
+.unvisible {
+    display: none;
 }
