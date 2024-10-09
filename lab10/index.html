@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="stopwatch">
+        <div class="time" id="display">00:00:00.000</div>
+        <div class="buttons">
+            <button id="startStopBtn" class="start">Старт</button>
+            <button id="resetBtn" class="reset">Обнулить</button>
+            <button id="clearHistoryBtn" class="clear-history">Очистить историю</button>
+        </div>
+        <div class="history">
+            <h3>История:</h3>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
