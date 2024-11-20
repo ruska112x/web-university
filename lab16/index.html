@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin-Code</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Введите пин-код состоящий из 6 цифр</h1>
+    <div class="input-section">
+        <input type="text" pattern="\d*" name="pin-code01" id="pin01" maxlength="6">
+        <input type="text" pattern="\d*" name="pin-code02" id="pin02" maxlength="6">
+    </div>
+    <div class="screen-keyboard">
+        <button type="button" class="key1" onclick="addNumber('1')">1</button>
+        <button type="button" class="key2" onclick="addNumber('2')">2</button>
+        <button type="button" class="key3" onclick="addNumber('3')">3</button>
+        <button type="button" class="key4" onclick="addNumber('4')">4</button>
+        <button type="button" class="key5" onclick="addNumber('5')">5</button>
+        <button type="button" class="key6" onclick="addNumber('6')">6</button>
+        <button type="button" class="key7" onclick="addNumber('7')">7</button>
+        <button type="button" class="key8" onclick="addNumber('8')">8</button>
+        <button type="button" class="key9" onclick="addNumber('9')">9</button>
+        <button type="button" class="keyC" onclick="deleteNumber()">C</button>
+        <button type="button" class="key0" onclick="addNumber('0')">0</button>
+        <button type="button" class="keyEnter" onclick="enterPins()">Enter</button>
+    </div>
+    <dialog id="dialog">
+        <p id="dialog-text"></p>
+        <button autofocus id="dialog-close">Close</button>
+    </dialog>
+    <script src="main.js"></script>
+</body>
+
+</html>
