@@ -5,6 +5,11 @@ function predict() {
             "Все будет отлично!",
             "Ты на правильном пути!"
         ],
+        positive_neutral: [
+            "Вероятнее всего",
+            "Знаки говорят - да",
+            "Хорошие перспективы"
+        ],
         neutral: [
             "Возможно...",
             "Не могу точно сказать.",
@@ -17,7 +22,7 @@ function predict() {
         ]
     };
 
-    const categories = ['positive', 'neutral', 'negative'];
+    const categories = ['positive', 'neutral', 'negative', 'positive_neutral'];
     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
 
     const randomAnswer = answers[randomCategory][Math.floor(Math.random() * answers[randomCategory].length)];
